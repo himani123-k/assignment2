@@ -1,0 +1,14 @@
+---
+# vars file for users
+mygroup:
+  - groupname: cloudadmins
+  - groupname: wheel
+myuser:
+  - newuser: user1000
+    firstgroup: cloudadmins
+    secondgroup: wheel
+
+  - newuser: user2000
+    firstgroup: cloudadmins
+    secondgroup: wheel
+

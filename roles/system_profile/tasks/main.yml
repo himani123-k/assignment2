@@ -1,0 +1,14 @@
+---
+# tasks file for system_profile
+- name: demonstrate roles for system_profile
+  block:
+    - name: File changes
+      blockinfile:
+        path: "{{ item.filepath }}"
+        insertafter: EOF
+        backup: yes
+        state: "{{ item.stateinfo }}"
+        block: |
+          #This is a test block added by Ansible…… {{ lookup('env','HOSTNAME') }}
+          export TMOUT=1800
+      loop: "{{ file_details }}"
